@@ -2,6 +2,7 @@
 " File:          syntax/indent.vim
 " Description:   TaskJuggler syntax
 " Author:        Jim Kalafut <github.com/kalafut>
+" Credits:       Contents derived from the TaskJuggler distribution
 " =============================================================================
 
 if exists("b:current_syntax")

@@ -2,6 +2,7 @@
 " File:          ftplugin/indent.vim
 " Description:   TaskJuggler indentation
 " Author:        Jim Kalafut <github.com/kalafut>
+" Credits:       Contents derived from the TaskJuggler distribution
 " =============================================================================
 
 setlocal softtabstop=2

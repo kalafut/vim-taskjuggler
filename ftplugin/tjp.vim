@@ -2,6 +2,7 @@
 " File:          ftplugin/tjp.vim
 " Description:   TaskJuggler folding and utilities
 " Author:        Jim Kalafut <github.com/kalafut>
+" Credits:       Contents derived from the TaskJuggler distribution
 " =============================================================================
 
 set foldmethod=syntax
