@@ -78,6 +78,8 @@ syn keyword tjp_columnid_annualleave annualleave
 hi def link tjp_columnid_annualleave Type
 syn keyword tjp_columnid_annualleavebalance annualleavebalance
 hi def link tjp_columnid_annualleavebalance Type
+syn keyword tjp_columnid_annualleavelist annualleavelist
+hi def link tjp_columnid_annualleavelist Type
 syn keyword tjp_columnid_alert alert
 hi def link tjp_columnid_alert Type
 syn keyword tjp_columnid_alertmessages alertmessages
@@ -92,6 +94,8 @@ syn keyword tjp_columnid_bsi bsi
 hi def link tjp_columnid_bsi Type
 syn keyword tjp_columnid_chart chart
 hi def link tjp_columnid_chart Type
+syn keyword tjp_columnid_children children
+hi def link tjp_columnid_children Type
 syn keyword tjp_columnid_closedtasks closedtasks
 hi def link tjp_columnid_closedtasks Type
 syn keyword tjp_columnid_competitorcount competitorcount
@@ -336,6 +340,8 @@ syn keyword tjp_hidetask hidetask contained
 hi def link tjp_hidetask Type
 syn keyword tjp_icalreport icalreport contained
 hi def link tjp_icalreport Type
+syn keyword tjp_novevents novevents contained
+hi def link tjp_novevents Type
 syn keyword tjp_scenario_ical scenario contained
 hi def link tjp_scenario_ical Type
 syn keyword tjp_accountprefix accountprefix contained
@@ -404,6 +410,8 @@ syn keyword tjp_extend extend contained
 hi def link tjp_extend Type
 syn keyword tjp_now now contained
 hi def link tjp_now Type
+syn keyword tjp_markdate markdate contained
+hi def link tjp_markdate Type
 syn keyword tjp_outputdir outputdir contained
 hi def link tjp_outputdir Type
 syn keyword tjp_shorttimeformat shorttimeformat contained
@@ -564,6 +572,10 @@ syn keyword tjp_duration duration contained
 hi def link tjp_duration Type
 syn keyword tjp_effort effort contained
 hi def link tjp_effort Type
+syn keyword tjp_effortdone effortdone contained
+hi def link tjp_effortdone Type
+syn keyword tjp_effortleft effortleft contained
+hi def link tjp_effortleft Type
 syn keyword tjp_end end contained
 hi def link tjp_end Type
 syn keyword tjp_flags_task flags contained
@@ -594,6 +606,8 @@ syn keyword tjp_scheduled scheduled contained
 hi def link tjp_scheduled Type
 syn keyword tjp_scheduling scheduling contained
 hi def link tjp_scheduling Type
+syn keyword tjp_schedulingmode schedulingmode contained
+hi def link tjp_schedulingmode Type
 syn keyword tjp_shifts_task shifts contained
 hi def link tjp_shifts_task Type
 syn keyword tjp_start start contained
@@ -649,7 +663,7 @@ syn region tjpblk_number_extend start=/^\s*number\s.*{\s*$/ end=/^\s*}\s*$/ tran
 syn region tjpblk_reference_extend start=/^\s*reference\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_reference_extend,tjp_inherit_extend,tjp_scenariospecific_extend contained
 syn region tjpblk_richtext_extend start=/^\s*richtext\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_richtext_extend,tjp_inherit_extend,tjp_scenariospecific_extend contained
 syn region tjpblk_text_extend start=/^\s*text\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_text_extend,tjp_inherit_extend,tjp_scenariospecific_extend contained
-syn region tjpblk_icalreport start=/^\s*icalreport\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_icalreport,tjp_hideresource,tjp_hidejournalentry,tjp_hidetask,tjp_end_report,tjp_period_report,tjp_start_report,tjp_rollupresource,tjp_rolluptask,tjp_scenario_ical
+syn region tjpblk_icalreport start=/^\s*icalreport\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_icalreport,tjp_hideresource,tjp_hidejournalentry,tjp_hidetask,tjp_end_report,tjp_period_report,tjp_start_report,tjp_rollupresource,tjp_rolluptask,tjp_novevents,tjp_scenario_ical
 syn region tjpblk_journalentry start=/^\s*journalentry\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_journalentry,tjp_alert,tjp_author,tjp_flags_journalentry,tjp_summary,tjp_details contained
 syn region tjpblk_dailymax start=/^\s*dailymax\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_dailymax,tjp_end_limit,tjp_period_limit,tjp_resources_limit,tjp_start_limit contained
 syn region tjpblk_dailymin start=/^\s*dailymin\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_dailymin,tjp_end_limit,tjp_period_limit,tjp_resources_limit,tjp_start_limit contained
@@ -662,7 +676,7 @@ syn region tjpblk_weeklymin start=/^\s*weeklymin\s.*{\s*$/ end=/^\s*}\s*$/ trans
 syn region tjpblk_navigator start=/^\s*navigator\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_navigator,tjp_hidereport
 syn region tjpblk_nikureport start=/^\s*nikureport\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_nikureport,tjp_formats,tjp_headline,tjp_hideresource,tjp_hidetask,tjp_numberformat,tjp_end_report,tjp_period_report,tjp_start_report,tjp_title,tjp_timeoff_nikureport
 syn region tjpblk_extend start=/^\s*extend\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_extend,tjp_date_extend,tjpblk_date_extend,tjp_number_extend,tjpblk_number_extend,tjp_reference_extend,tjpblk_reference_extend,tjp_richtext_extend,tjpblk_richtext_extend,tjp_text_extend,tjpblk_text_extend contained
-syn region tjpblk_project start=/^\s*project\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_project,tjp_alertlevels,tjp_currencyformat,tjp_currency,tjp_dailyworkinghours,tjp_extend,tjpblk_extend,tjp_include_project,tjp_journalentry,tjpblk_journalentry,tjp_now,tjp_numberformat,tjp_outputdir,tjp_scenario,tjpblk_scenario,tjp_shorttimeformat,tjp_timeformat,tjp_timezone,tjp_timingresolution,tjp_trackingscenario,tjp_weekstartsmonday,tjp_weekstartssunday,tjp_workinghours_project,tjp_yearlyworkingdays
+syn region tjpblk_project start=/^\s*project\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_project,tjp_alertlevels,tjp_currencyformat,tjp_currency,tjp_dailyworkinghours,tjp_extend,tjpblk_extend,tjp_include_project,tjp_journalentry,tjpblk_journalentry,tjp_now,tjp_markdate,tjp_numberformat,tjp_outputdir,tjp_scenario,tjpblk_scenario,tjp_shorttimeformat,tjp_timeformat,tjp_timezone,tjp_timingresolution,tjp_trackingscenario,tjp_weekstartsmonday,tjp_weekstartssunday,tjp_workinghours_project,tjp_yearlyworkingdays
 syn region tjpblk_limits start=/^\s*limits\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_limits,tjp_dailymax,tjpblk_dailymax,tjp_dailymin,tjpblk_dailymin,tjp_maximum,tjpblk_maximum,tjp_minimum,tjpblk_minimum,tjp_monthlymax,tjpblk_monthlymax,tjp_monthlymin,tjpblk_monthlymin,tjp_weeklymax,tjpblk_weeklymax,tjp_weeklymin,tjpblk_weeklymin
 syn region tjpblk_include_properties start=/^\s*include\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_include_properties,tjp_accountprefix,tjp_reportprefix,tjp_resourceprefix,tjp_taskprefix
 syn region tjpblk_columns start=/^\s*columns\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_columns,tjp_celltext_column,tjp_cellcolor_column,tjp_end_column,tjp_fontcolor_column,tjp_halign_column,tjp_listitem_column,tjp_listtype_column,tjp_period_column,tjp_scale_column,tjp_start_column,tjp_timeformat1,tjp_timeformat2,tjp_title_column,tjp_tooltip_column,tjp_width_column contained
@@ -678,8 +692,8 @@ syn region tjpblk_statussheet start=/^\s*statussheet\s.*{\s*$/ end=/^\s*}\s*$/ t
 syn region tjpblk_statussheetreport start=/^\s*statussheetreport\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_statussheetreport,tjp_hideresource,tjp_hidetask,tjp_end_report,tjp_period_report,tjp_start_report,tjp_sortresources,tjp_sorttasks
 syn region tjpblk_task_statussheet start=/^\s*task\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_task_statussheet,tjp_status_statussheet,tjpblk_status_statussheet,tjp_task_statussheet,tjpblk_task_statussheet contained
 syn region tjpblk_tagfile start=/^\s*tagfile\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_tagfile,tjp_hideresource,tjp_hidetask,tjp_rollupresource,tjp_rolluptask
-syn region tjpblk_task start=/^\s*task\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_task,tjp_adopt_task,tjp_journalentry,tjpblk_journalentry,tjp_note_task,tjp_purge,tjp_supplement_task,tjpblk_supplement_task,tjp_task,tjpblk_task,tjp_allocate,tjpblk_allocate,tjp_booking_task,tjpblk_booking_task,tjp_charge,tjp_chargeset,tjp_complete,tjp_depends,tjpblk_depends,tjp_duration,tjp_effort,tjp_end,tjp_flags_task,tjp_fail,tjp_length,tjp_limits_task,tjpblk_limits_task,tjp_maxend,tjp_maxstart,tjp_milestone,tjp_minend,tjp_minstart,tjp_period_task,tjp_precedes,tjpblk_precedes,tjp_priority,tjp_projectid_task,tjp_responsible,tjp_scheduled,tjp_scheduling,tjp_shifts_task,tjp_start,tjp_warn
-syn region tjpblk_supplement_task start=/^\s*supplement task\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_supplement_task,tjp_adopt_task,tjp_journalentry,tjpblk_journalentry,tjp_note_task,tjp_purge,tjp_supplement_task,tjpblk_supplement_task,tjp_task,tjpblk_task,tjp_allocate,tjpblk_allocate,tjp_booking_task,tjpblk_booking_task,tjp_charge,tjp_chargeset,tjp_complete,tjp_depends,tjpblk_depends,tjp_duration,tjp_effort,tjp_end,tjp_flags_task,tjp_fail,tjp_length,tjp_limits_task,tjpblk_limits_task,tjp_maxend,tjp_maxstart,tjp_milestone,tjp_minend,tjp_minstart,tjp_period_task,tjp_precedes,tjpblk_precedes,tjp_priority,tjp_projectid_task,tjp_responsible,tjp_scheduled,tjp_scheduling,tjp_shifts_task,tjp_start,tjp_warn,tjp_supplement contained
+syn region tjpblk_task start=/^\s*task\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_task,tjp_adopt_task,tjp_journalentry,tjpblk_journalentry,tjp_note_task,tjp_purge,tjp_supplement_task,tjpblk_supplement_task,tjp_task,tjpblk_task,tjp_allocate,tjpblk_allocate,tjp_booking_task,tjpblk_booking_task,tjp_charge,tjp_chargeset,tjp_complete,tjp_depends,tjpblk_depends,tjp_duration,tjp_effort,tjp_effortdone,tjp_effortleft,tjp_end,tjp_flags_task,tjp_fail,tjp_length,tjp_limits_task,tjpblk_limits_task,tjp_maxend,tjp_maxstart,tjp_milestone,tjp_minend,tjp_minstart,tjp_period_task,tjp_precedes,tjpblk_precedes,tjp_priority,tjp_projectid_task,tjp_responsible,tjp_scheduled,tjp_scheduling,tjp_schedulingmode,tjp_shifts_task,tjp_start,tjp_warn
+syn region tjpblk_supplement_task start=/^\s*supplement task\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_supplement_task,tjp_adopt_task,tjp_journalentry,tjpblk_journalentry,tjp_note_task,tjp_purge,tjp_supplement_task,tjpblk_supplement_task,tjp_task,tjpblk_task,tjp_allocate,tjpblk_allocate,tjp_booking_task,tjpblk_booking_task,tjp_charge,tjp_chargeset,tjp_complete,tjp_depends,tjpblk_depends,tjp_duration,tjp_effort,tjp_effortdone,tjp_effortleft,tjp_end,tjp_flags_task,tjp_fail,tjp_length,tjp_limits_task,tjpblk_limits_task,tjp_maxend,tjp_maxstart,tjp_milestone,tjp_minend,tjp_minstart,tjp_period_task,tjp_precedes,tjpblk_precedes,tjp_priority,tjp_projectid_task,tjp_responsible,tjp_scheduled,tjp_scheduling,tjp_schedulingmode,tjp_shifts_task,tjp_start,tjp_warn,tjp_supplement contained
 syn region tjpblk_taskreport start=/^\s*taskreport\s.*{\s*$/ end=/^\s*}\s*$/ transparent fold contains=@tjpcommon,tjp_taskreport,tjp_accountroot,tjp_auxdir_report,tjp_balance,tjp_caption,tjp_center,tjp_columns,tjpblk_columns,tjp_currencyformat,tjp_end_report,tjp_epilog,tjp_flags_report,tjp_footer,tjp_formats,tjp_header,tjp_headline,tjp_hidejournalentry,tjp_hideaccount,tjp_hideresource,tjp_hidetask,tjp_height,tjp_journalattributes,tjp_journalmode,tjp_left,tjp_loadunit,tjp_numberformat,tjp_opennodes,tjp_period_report,tjp_prolog,tjp_purge,tjp_rawhtmlhead,tjp_accountreport,tjpblk_accountreport,tjp_export,tjpblk_export,tjp_resourcereport,tjpblk_resourcereport,tjp_taskreport,tjpblk_taskreport,tjp_textreport,tjpblk_textreport,tjp_tracereport,tjpblk_tracereport,tjp_right,tjp_rollupaccount,tjp_rollupresource,tjp_rolluptask,tjp_scenarios,tjp_selfcontained,tjp_sortaccounts,tjp_sortjournalentries,tjp_sortresources,tjp_sorttasks,tjp_start_report,tjp_resourceroot,tjp_taskroot,tjp_timeformat,tjp_timezone_report,tjp_title,tjp_width
 syn region tjpblk_booking_task start=/^\s*booking\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_booking_task,tjp_overtime_booking,tjp_sloppy_booking contained
 syn region tjpblk_depends start=/^\s*depends\s.*{\s*$/ end=/^\s*}\s*$/ transparent contains=@tjpcommon,tjp_depends,tjp_gapduration,tjp_gaplength,tjp_onend,tjp_onstart contained
